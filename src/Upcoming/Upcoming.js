@@ -28,29 +28,31 @@ const Upcoming = () => {
         </Card> */}
 
             {
-                upcoming.length > 0 ?
-                    <div>
+                upcoming.length > 0 &&
+                <div>
 
-                        <Divider orientation="left">Align Middle</Divider>
+                    <Divider orientation="left">Align Middle</Divider>
 
-                        <Row justify="space-around" align="middle">
+                    <Row justify="space-around" align="middle">
 
-                            {upcoming.map((movie) => {
-                                return <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                                    {/* <Card
+                        {upcoming.map((movie) => {
+                            return <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                                {/* <Card
                                 hoverable
                                 style={{ width: 240 }}
                                 cover={<img alt="example" src={movie.poster_path ? `${envData.BASE_POSTER_PATH}${movie.poster_path}` : envData.EMPTY_IMAGE} />}
                             >
                                 <Meta title={movie.original_title} description="www.instagram.com" />
                             </Card>               */}
-                                    <MovieCard movie={movie} />
-                                </Col>
-                            })}
+                                <MovieCard movie={movie} />
+                            </Col>
+                        })}
 
 
-                        </Row> : null
-                        </div>}
+                    </Row>
+                </div>
+
+            }
 
 
             <Button disabled={pageNo === 1} onClick={() => {
